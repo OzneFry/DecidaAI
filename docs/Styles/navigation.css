@@ -21,6 +21,16 @@
     gap: 6px;
     flex-wrap: wrap;
   }
+
+  .logo-nav {
+    height: 38px;
+    width: auto;
+    max-width: 150px;
+    object-fit: contain;
+    margin-right: 6px;
+    vertical-align: middle;
+    display: inline-block;
+  }
   
   .movie-nav button {
     background: #e50914;
