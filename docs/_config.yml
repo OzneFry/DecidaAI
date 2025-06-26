@@ -1,0 +1,4 @@
+# Site config for GitHub Pages
+# Ajuste conforme necessário para seu projeto Jekyll ou Pages
+baseurl: ""
+url: ""

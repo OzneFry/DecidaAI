@@ -1,0 +1,35 @@
+/* responsive.css */
+@media (max-width: 1100px) {
+    .catalog {
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 16px;
+    }
+  }
+  @media (max-width: 700px) {
+    body {
+      padding: 0 2vw 12vw 2vw;
+    }
+    .movie-nav {
+      flex-direction: column;
+      gap: 8px;
+    }
+    .catalog {
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+  }
+  @media (max-width: 500px) {
+    .catalog {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .movie-card {
+      min-height: 320px;
+      padding: 8px;
+    }
+    .movie-nav button,
+    .pagination-fixed button {
+      font-size: 0.95em;
+      padding: 6px 10px;
+    }
+  }
+  
