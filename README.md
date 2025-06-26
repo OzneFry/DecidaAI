@@ -114,6 +114,7 @@ A aplicação pode ser publicada facilmente em qualquer serviço de hospedagem e
 
 ## Créditos
 
+- Desenvolvedores e colaboradores: Graziella Pereira
 - API de filmes: [TMDB](https://www.themoviedb.org/)
 - Chatbot: [n8n](https://n8n.io/)
 
