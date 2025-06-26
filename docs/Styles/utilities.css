@@ -1,0 +1,12 @@
+/* utilities.css */
+.hidden {
+    display: none;
+  }
+  .sticky-nav-spacer {
+    height: 80px;
+  }
+  .star {
+    color: #ffd700;
+    font-size: 1.1em;
+  }
+  
