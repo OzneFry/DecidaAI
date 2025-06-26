@@ -98,4 +98,43 @@
     margin-left: 0;
     box-shadow: none;
     display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #search-btn .search-btn-icon {
+    font-size: 1.2em;
+    color: #fff;
+    pointer-events: none;
+    user-select: none;
+    display: flex;
+    align-items: center;
+  }
+  #search-btn:hover,
+  #search-btn:focus {
+    background: #b0060f;
+  }
+  #genre-filter {
+    background: #181818;
+    color: #fff;
+    border: 1.5px solid #e50914;
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-size: 0.95em;
+  }
+  #genre-filter:focus {
+    border-color: #fff;
+  }
+  #movie-search:focus,
+  #genre-filter:focus {
+    border-color: #fff;
+  }
+  
+  .logo-nav {
+    height: 42x;
+    width: auto;
+    max-width: 185px;
+    object-fit: contain;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
   }
