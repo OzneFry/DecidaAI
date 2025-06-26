@@ -1,0 +1,22 @@
+/* base.css */
+body {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    margin: 0;
+    padding: 2vw 2vw 20px 2vw;
+    background: #111111;
+    color: #fff;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+/* Destaque para palavras antes das informações */
+.label {
+    color: #ff3333;
+    font-weight: bold;
+}
+  
