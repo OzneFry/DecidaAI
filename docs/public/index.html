@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>DecidaAI</title>
+  <link rel="stylesheet" href="./Styles/base.css">
+  <link rel="stylesheet" href="./Styles/Layout.css">
+  <link rel="stylesheet" href="./Styles/components.css">
+  <link rel="stylesheet" href="./Styles/navigation.css">
+  <link rel="stylesheet" href="./Styles/pagination.css">
+  <link rel="stylesheet" href="./Styles/modal.css">
+  <link rel="stylesheet" href="./Styles/responsive.css">
+  <link rel="stylesheet" href="./Styles/utilities.css">
+
+  <!-- Chat CSS externo -->
+  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+</head>
+<body>
+  <header style="padding:0;">
+    <nav class="movie-nav movie-nav-with-logo">
+      <div class="nav-left">
+        <img src="./logo.png" alt="Logo DecidaAI" class="logo-nav">
+        <button class="nav-btn" data-cat="popular">Populares</button>
+        <button class="nav-btn" data-cat="now_playing">Em Cartaz</button>
+        <button class="nav-btn" data-cat="top_rated">Melhores Avaliados</button>
+        <button class="nav-btn" data-cat="upcoming">Próximos</button>
+      </div>
+      <div class="nav-right">
+        <div class="search-container">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <input id="movie-search" type="text" placeholder="Pesquisar filmes...">
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="movie-catalog" class="catalog"></section>
+  </main>
+
+  <!-- Chat N8N -->
+  <script type="module">
+    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+    createChat({
+      webhookUrl: 'https://graziellapr.app.n8n.cloud/webhook/62be32e3-baf2-4ee6-aefa-f1e326078d31/chat',
+      webhookConfig: {
+        method: 'POST',
+        headers: {}
+      },
+      target: '#n8n-chat',
+      mode: 'window',
+      chatInputKey: 'chatInput',
+      chatSessionKey: 'sessionId',
+      loadPreviousSession: true,
+      metadata: {},
+      showWelcomeScreen: false,
+      defaultLanguage: 'en',
+      initialMessages: [
+        'E aí! Bora achar o filme perfeito pra hoje? Me conta: tá na vibe de ver o quê? 🧐'
+      ],
+      i18n: {
+        en: {
+          title: 'Assistente Decida AI 🤖',
+          subtitle: "Vou te ajudar a encontrar o filme perfeito para você!",
+          footer: '',
+          getStarted: 'Nova conversa',
+          inputPlaceholder: 'Diga alguma coisa...',
+        },
+      },
+    });
+  </script>
+
+  <!-- JS principal da aplicação -->
+  <script type="module" src="./scripts/app.js"></script>
+  <script>
+    // Evento de troca de categoria
+    document.addEventListener('DOMContentLoaded', function() {
+      const buttons = document.querySelectorAll('.nav-btn');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const event = new CustomEvent('changeCategory', { detail: btn.dataset.cat });
+          window.dispatchEvent(event);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
